@@ -2,10 +2,8 @@
 import { formatDate } from "../../helper.js";
 import { ref } from "vue";
 import { useToastr } from "../../toastr.js";
-import axios from "axios";
 
 const toastr = useToastr();
-
 const props = defineProps({
   user: Object,
   index: Number,
@@ -17,11 +15,11 @@ const emit = defineEmits(["userDeleted", "editUser", "confirmUserDeletion"]);
 const roles = ref([
   {
     name: "ADMIN",
-    value: 0,
+    value: 1,
   },
   {
     name: "USER",
-    value: 1,
+    value: 0,
   },
 ]);
 
@@ -48,7 +46,12 @@ const toggleSelection = () => {
     <td>{{ user.formatted_created_at }}</td>
     <td>
       <select class="form-control" @change="changeRole(user, $event.target.value)">
-        <option v-for="role in roles" :value="role.value" :selected="user.role" :key="role.id">
+        <option
+          v-for="role in roles"
+          :value="role.value"
+          :selected="user.role"
+          :key="role.id"
+        >
           {{ role.name }}
         </option>
       </select>

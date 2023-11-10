@@ -44,16 +44,16 @@ const profile = () => {
     <ul class="navbar-nav ml-auto">
       <!-- todo Logout button -->
       <li class="nav-item dropdown show">
-        <a class="brand-link" data-toggle="dropdown" href="#" aria-expanded="true">
+        <a class="brand-link" data-toggle="dropdown" href="#" aria-expanded="false">
           <img
-            :src="authUserStore.user.avatar"
+            :src="authUserStore.user.avatar ?? '/assets/image/noimage.png'"
             class="img-circle elevation-2"
             alt="Image"
             style="max-width: 30px"
           />
         </a>
         <div
-          class="dropdown-menu dropdown-menu-md dropdown-menu-right show"
+          class="dropdown-menu dropdown-menu-md dropdown-menu-right"
           style="padding-left: 3px"
         >
           <div class="row">

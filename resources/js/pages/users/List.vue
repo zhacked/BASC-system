@@ -1,5 +1,6 @@
 <script setup>
 import axios from "axios";
+
 import { ref, onMounted, reactive, watch } from "vue";
 import { Form, Field, useResetForm } from "vee-validate";
 import * as yup from "yup";
@@ -244,7 +245,12 @@ onMounted(() => {
           </table>
         </div>
       </div>
-      <!-- <Bootstrap4Pagination :data="users" @pagination-change-page="getUsers" /> -->
+      <Bootstrap4Pagination
+        :data="users"
+        :limit="2"
+        keepLength="true"
+        @pagination-change-page="getUsers"
+      />
     </div>
   </div>
 

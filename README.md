@@ -20,8 +20,10 @@
 - php artisan optimize:clear
 - php artisan serve
 - npm run dev
-
+- composer dump-autoload
+- php artisan storage:link
 
 ## note 
 - Please Dont push directly on the main 
+-
 
