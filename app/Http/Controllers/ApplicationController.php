@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends Controller
 {
@@ -10,4 +12,6 @@ class ApplicationController extends Controller
     {
         return view('admin.layouts.app');
     }
+
+
 }

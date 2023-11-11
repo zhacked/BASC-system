@@ -7,6 +7,8 @@ import UserList from './pages/users/List.vue';
 import UpdateSetting from './pages/settings/UpdateSetting.vue';
 import UpdateProfile from './pages/profile/UpdateProfile.vue';
 import Login from './pages/auth/Login.vue';
+import ActivityLogs from './pages/logs/List.vue';
+
 
 export default [
     {
@@ -62,6 +64,14 @@ export default [
         name: 'admin.setting',
         component: UpdateSetting
     },
+
+    {
+        path: '/admin/activity',
+        name: 'admin.activity',
+        component: ActivityLogs
+    },
+
+    
 
 
 ]
