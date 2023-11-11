@@ -27,7 +27,7 @@ const handleSubmit = () => {
   loading.value = true;
   errorMessage.value = "";
   axios
-    .post("/login", form)
+    .post("/api/users/login", form)
     .then(() => {
       router.push("/admin/dashboard");
     })

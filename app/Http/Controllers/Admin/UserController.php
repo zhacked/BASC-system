@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Activitylog\Models\Activity;
+use Illuminate\Support\Facades\Session;
+use \Carbon\Carbon;
 class UserController extends Controller
 {
     public function index()
@@ -27,11 +31,15 @@ class UserController extends Controller
             'password' => 'required|min:8',
         ]);
 
+
+
         return User::create([
             'name' => request('name'),
             'email' => request('email'),
             'password' => bcrypt(request('password')),
         ]);
+
+       
     }
 
     public function update(User $user)
@@ -73,4 +81,6 @@ class UserController extends Controller
 
         return response()->json(['message' => 'Users deleted successfully!']);
     }
+
+
 }

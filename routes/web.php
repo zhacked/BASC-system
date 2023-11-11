@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\ActivityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +23,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth')->group(function () {
-    // Route::get('/api/stats/appointments', [DashboardStatController::class, 'appointments']);
-    // Route::get('/api/stats/users', [DashboardStatController::class, 'users']);
+Route::post('/api/users/login', [LoginController::class, 'login']);
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('/api/activity-logs', [ActivityController::class, 'index']);
+
+    Route::get('/api/users/logout', [LoginController::class, 'logout']);
+    
     Route::get('/api/users', [UserController::class, 'index']);
     Route::post('/api/users', [UserController::class, 'store']);
     Route::patch('/api/users/{user}/change-role', [UserController::class, 'changeRole']);

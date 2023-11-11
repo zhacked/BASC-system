@@ -1,3 +1,9 @@
+<script setup>
+var iframe = document.getElementById("sinotrack"); // const IframeWindow = myIframe.contentWindow;
+
+console.log(iframe);
+</script>
+
 <template>
   <div class="content-header">
     <div class="container-fluid">

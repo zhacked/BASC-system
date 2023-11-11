@@ -8,7 +8,7 @@ const authUserStore = useAuthUserStore();
 const settingStore = useSettingStore();
 
 const logout = () => {
-  axios.post("/logout").then((response) => {
+  axios.get("/api/users/logout").then((response) => {
     authUserStore.user.name = "";
     router.push("/login");
   });

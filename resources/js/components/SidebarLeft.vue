@@ -122,6 +122,13 @@ const logout = () => {
               <p>Setting</p>
             </router-link>
           </li>
+
+          <li class="nav-item">
+            <router-link to="/admin/activity" active-class="active" class="nav-link">
+              <i class="nav-icon fa fa-address-book"></i>
+              <p>Activity Logs</p>
+            </router-link>
+          </li>
         </ul>
       </nav>
     </div>
